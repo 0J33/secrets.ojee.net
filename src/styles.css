@@ -548,12 +548,20 @@ table.zebra tr:nth-child(even) td { background: var(--paper-2); }
 }
 
 /* ── PDF iframe ───────────────────────────────────────────────────── */
+.page-flex {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 140px);
+}
 .pdf-frame {
   width: 100%;
-  height: calc(100vh - 220px);
+  flex: 1 1 auto;
+  min-height: 600px;
   border: 1px solid var(--rule);
   background: var(--paper);
 }
+.page-flex .chapter-bar { flex-shrink: 0; }
+.page-flex .section-bar { flex-shrink: 0; }
 
 /* ── Secret card ──────────────────────────────────────────────────── */
 .secret-card {
@@ -634,7 +642,17 @@ table.zebra tr:nth-child(even) td { background: var(--paper-2); }
   h1 { font-size: 22px; }
   h2 { font-size: 17px; }
   .footer { padding: 12px 16px; flex-direction: column; gap: 4px; align-items: flex-start; }
-  .pdf-frame { height: calc(100vh - 280px); }
+  .pdf-frame { min-height: 70vh; }
+  .page-flex { min-height: calc(100vh - 120px); }
+  .chapter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 6px 8px;
+  }
+  .chapter-bar > .btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
   table { font-size: 11px; }
   th, td { padding: 3px 6px; }
 }

@@ -21,7 +21,7 @@ export default function Paper() {
   const src = `/paper.pdf#page=${page}&zoom=page-width`;
 
   return (
-    <div className="page">
+    <div className="page page-flex">
       <div className="section-bar">
         <span className="sec-num">§ Paper</span>
         <h1>Algebraic Logic of Secrets</h1>
