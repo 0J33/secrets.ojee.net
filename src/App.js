@@ -67,10 +67,10 @@ export default function App() {
         ))}
         <div className="topnav-spacer" />
         <div className="topnav-right">
-          <span>|D|: {model.agents.length + model.propositions.length + model.groups.length + model.timepoints.length + model.histories.length}</span>
-          <span>·</span>
-          <span>K-axiom: {model.enableK ? 'on' : 'off'}</span>
-          <span>·</span>
+          <span className="topnav-stat">|D|: {model.agents.length + model.propositions.length + model.groups.length + model.timepoints.length + model.histories.length}</span>
+          <span className="topnav-stat">·</span>
+          <span className="topnav-stat">K-axiom: {model.enableK ? 'on' : 'off'}</span>
+          <span className="topnav-stat">·</span>
           <button className="btn sm ghost theme-toggle" onClick={toggleTheme}
                   title={theme === 'dark' ? 'switch to light' : 'switch to dark'}>
             {theme === 'dark' ? (
@@ -108,7 +108,7 @@ export default function App() {
 
       <footer className="footer">
         <span>Log<sub>A</sub>Sec simulator — Omar Gamal Eldin, <em>Algebraic Logic of Secrets</em> (GUC, 2025)</span>
-        <span>ojee.net</span>
+        <a href="https://ojee.net" target="_blank" rel="noreferrer">ojee.net</a>
       </footer>
     </>
   );
