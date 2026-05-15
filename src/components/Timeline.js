@@ -112,11 +112,9 @@ export default function Timeline({ model, history, time, onSelect, onAddHistory,
                 <circle r={NODE_R + 8} fill="transparent" />
                 <circle r={NODE_R} className={'vel-dot' + (active ? ' active' : '')} />
                 {active && (
-                  <text y={-NODE_R - 6} textAnchor="middle"
-                        fontFamily="JetBrains Mono, monospace" fontSize="9"
-                        fill="var(--accent)">
-                    here
-                  </text>
+                  <circle r={NODE_R + 3} fill="none"
+                          stroke="var(--accent)" strokeWidth="1.4"
+                          strokeDasharray="2 2" />
                 )}
               </g>
             );
