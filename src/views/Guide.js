@@ -4,10 +4,12 @@ import { Tex } from '../components/Math';
 export default function Guide() {
   return (
     <div className="page" style={{ maxWidth: 880 }}>
-      <div className="row" style={{ marginBottom: 12 }}>
+      <div className="section-bar">
         <span className="sec-num">§ Guide</span>
         <h1>Reader’s & user’s guide</h1>
       </div>
+
+      <div className="paper-block">
 
       <h2><span className="sec-num">1</span> What this simulator is</h2>
       <p>
@@ -139,6 +141,7 @@ export default function Guide() {
           side too.
         </li>
       </ul>
+      </div>
     </div>
   );
 }

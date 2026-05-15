@@ -33,7 +33,7 @@ export default function Notes() {
 
   return (
     <div className="page" style={{ maxWidth: 880 }}>
-      <div className="row" style={{ marginBottom: 12 }}>
+      <div className="section-bar">
         <span className="sec-num">§ Notes</span>
         <h1>Marginalia</h1>
         <span className="serif-it muted" style={{ marginLeft: 8 }}>
@@ -45,17 +45,19 @@ export default function Notes() {
         <button className="btn sm ghost" onClick={clear}>clear</button>
       </div>
 
-      <textarea
-        className="notes-textarea"
-        value={text}
-        onChange={(e) => { setText(e.target.value); setSaved(false); }}
-        placeholder="Write your annotations here. — Anything you'd jot in a paper margin: open questions, counterexamples to try, candidate axioms, references to chase."
-      />
+      <div className="paper-block">
+        <textarea
+          className="notes-textarea"
+          value={text}
+          onChange={(e) => { setText(e.target.value); setSaved(false); }}
+          placeholder="Write your annotations here. — Anything you'd jot in a paper margin: open questions, counterexamples to try, candidate axioms, references to chase."
+        />
 
-      <p className="muted tiny" style={{ marginTop: 12 }}>
-        Notes are stored in your browser’s <code>localStorage</code> under the key
-        <code style={{ marginLeft: 4 }}>{KEY}</code>. They never leave this device.
-      </p>
+        <p className="muted tiny" style={{ marginTop: 12 }}>
+          Notes are stored in your browser’s <code>localStorage</code> under the key
+          <code style={{ marginLeft: 4 }}>{KEY}</code>. They never leave this device.
+        </p>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,9 @@ import { Tex } from '../components/Math';
 import { AXIOMS } from '../engine/axioms';
 import { THEOREMS } from '../engine/theorems';
 
+const LogAB = <>Log<sub>A</sub>B</>;
+const sigma = (s) => <>σ<sub>{s}</sub></>;
+
 const REFS = [
   { n: 1,  cite: 'Bennett, Galton — A unifying semantics for time and events. Artificial Intelligence, 2004.' },
   { n: 2,  cite: 'Blackburn, de Rijke, Venema — Modal Logic. Cambridge University Press, 2001.' },
@@ -16,7 +19,7 @@ const REFS = [
   { n: 6,  cite: 'Halmos — The basic concepts of algebraic logic. JSL 23(2), 1958.' },
   { n: 7,  cite: 'Halpern, O’Neill — On the logic of secrecy. J. Computer Security 12(2), 2004.' },
   { n: 8,  cite: 'Hawke, Özgün, Berto — The fundamental problem of logical omniscience. JPL 49(4), 2020.' },
-  { n: 9,  cite: 'Ismail — Log_A B: a first-order non-paradoxical algebraic logic of belief. IGPL 20(5), 2012.' },
+  { n: 9,  cite: <>Ismail — {LogAB}: a first-order non-paradoxical algebraic logic of belief. IGPL 20(5), 2012.</> },
   { n: 10, cite: 'Ismail — Stability in a commonsense ontology of states. COMMONSENSE 2013.' },
   { n: 11, cite: 'Ismail, Shafie — A commonsense theory of secrets. IOS Press FOIS, 2020.' },
   { n: 12, cite: 'Kowalski, Sergot — A logic-based calculus of events. New Generation Computing 4(1), 1986.' },
@@ -25,11 +28,11 @@ const REFS = [
 
 const SYMBOLS = [
   { sym: '⊤ / ⊥', meaning: 'top / bottom of Boolean algebra P' },
-  { sym: 'σ_P', meaning: 'sort of propositional (atemporal-state) terms' },
-  { sym: 'σ_A', meaning: 'sort of individual / agent terms' },
-  { sym: 'σ_G', meaning: 'sort of group terms' },
-  { sym: 'σ_T', meaning: 'sort of time-point terms' },
-  { sym: 'σ_S', meaning: 'sort of state terms (general)' },
+  { sym: sigma('P'), meaning: 'sort of propositional (atemporal-state) terms' },
+  { sym: sigma('A'), meaning: 'sort of individual / agent terms' },
+  { sym: sigma('G'), meaning: 'sort of group terms' },
+  { sym: sigma('T'), meaning: 'sort of time-point terms' },
+  { sym: sigma('S'), meaning: 'sort of state terms (general)' },
   { sym: 'B(a, ϕ)', meaning: 'agent a believes proposition ϕ' },
   { sym: 'I(a, ϕ)', meaning: 'agent a intends ϕ' },
   { sym: 'R(a, ϕ)', meaning: 'ϕ has been revealed to a' },
@@ -54,13 +57,15 @@ const SECRETS = [
 export default function Reference() {
   return (
     <div className="page">
-      <div className="row" style={{ marginBottom: 12 }}>
+      <div className="section-bar">
         <span className="sec-num">§ Ref</span>
         <h1>Reference card</h1>
         <span className="serif-it muted" style={{ marginLeft: 8 }}>
           everything the engine uses, in one place.
         </span>
       </div>
+
+      <div className="paper-block">
 
       <h2><span className="sec-num">A</span> Symbol glossary</h2>
       <table className="zebra">
@@ -136,6 +141,7 @@ export default function Reference() {
           </li>
         ))}
       </ol>
+      </div>
     </div>
   );
 }

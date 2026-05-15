@@ -22,7 +22,7 @@ export default function Paper() {
 
   return (
     <div className="page">
-      <div className="row" style={{ marginBottom: 12 }}>
+      <div className="section-bar">
         <span className="sec-num">§ Paper</span>
         <h1>Algebraic Logic of Secrets</h1>
         <span className="serif-it muted" style={{ marginLeft: 8 }}>

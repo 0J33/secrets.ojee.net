@@ -185,6 +185,14 @@ body::before {
   margin: -24px -32px 16px;
 }
 
+.paper-block {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 18px 28px;
+  margin-bottom: 24px;
+}
+.paper-block > h2:first-child { margin-top: 0; }
+
 .sec-num {
   font-family: var(--mono);
   font-size: 11px;
