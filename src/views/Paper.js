@@ -34,7 +34,7 @@ export default function Paper() {
         <a className="btn ghost sm" href="/paper.pdf" download>download</a>
       </div>
 
-      <div className="row" style={{ gap: 4, marginBottom: 8, flexWrap: 'wrap' }}>
+      <div className="chapter-bar">
         {CHAPTERS.map((c) => (
           <button key={c.id}
                   className={'btn sm ' + (c.page === page ? 'active' : 'ghost')}

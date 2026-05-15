@@ -193,6 +193,16 @@ body::before {
 }
 .paper-block > h2:first-child { margin-top: 0; }
 
+.chapter-bar {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
 .sec-num {
   font-family: var(--mono);
   font-size: 11px;
