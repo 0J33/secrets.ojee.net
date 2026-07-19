@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Simulator from './views/Simulator';
+import Live from './views/Live';
 import Paper from './views/Paper';
 import Reference from './views/Reference';
 import Guide from './views/Guide';
@@ -9,10 +10,11 @@ import { ensureAssignments } from './engine/model';
 
 const VIEWS = [
   { id: 'sim',   num: '§ I',   label: 'Workbench' },
-  { id: 'paper', num: '§ II',  label: 'Paper' },
-  { id: 'ref',   num: '§ III', label: 'Reference' },
-  { id: 'guide', num: '§ IV',  label: 'Guide' },
-  { id: 'notes', num: '§ V',   label: 'Notes' },
+  { id: 'live',  num: '§ II',  label: 'Live' },
+  { id: 'paper', num: '§ III', label: 'Paper' },
+  { id: 'ref',   num: '§ IV',  label: 'Reference' },
+  { id: 'guide', num: '§ V',   label: 'Guide' },
+  { id: 'notes', num: '§ VI',  label: 'Notes' },
 ];
 
 export default function App() {
@@ -100,6 +102,7 @@ export default function App() {
 
       <main>
         {view === 'sim'   && <Simulator model={model} setModel={setModel} />}
+        {view === 'live'  && <Live />}
         {view === 'paper' && <Paper />}
         {view === 'ref'   && <Reference />}
         {view === 'guide' && <Guide />}
