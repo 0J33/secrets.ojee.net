@@ -3,7 +3,7 @@ import React from 'react';
 /* ============================================================
    Icons.
 
-   Status was marked with ✓, ✗ and ⚠ — dingbats, whose shape and
+   Status was marked with tick, cross and warning characters — dingbats, whose shape and
    weight are whatever the reader's font decides, so a pass mark
    rendered differently on every machine. The theme toggle drew
    its own sun and moon inline.
