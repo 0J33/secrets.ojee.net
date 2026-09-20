@@ -4,6 +4,7 @@
 // static site replays runs with no backend.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Icon from '../components/Icon';
 import AgentStage from '../components/AgentStage';
 import SecrecyStrip from '../components/SecrecyStrip';
 import Transcript from '../components/Transcript';
@@ -163,10 +164,10 @@ export default function Live() {
           </div>
           <div className="live-status">
             {status === 'running' && <span className="tag-mono">⏳ {progress}</span>}
-            {status === 'done' && <span className="tag-mono good">✓ {hasRun ? 'trace ready — scrub the timeline' : 'done'}</span>}
+            {status === 'done' && <span className="tag-mono good"><Icon name="check" size={12} /> {hasRun ? 'trace ready — scrub the timeline' : 'done'}</span>}
             {status === 'error' && (
               <span className="tag-mono bad">
-                ✗ {error} — is Ollama running? start with{' '}
+                <Icon name="cross" size={12} /> {error} — is Ollama running? start with{' '}
                 <code>OLLAMA_ORIGINS=* ollama serve</code>, or run the app via <code>npm start</code> (proxy).
               </span>
             )}

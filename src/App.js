@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Icon from './components/Icon';
 import Simulator from './views/Simulator';
 import Live from './views/Live';
 import Paper from './views/Paper';
@@ -75,26 +76,7 @@ export default function App() {
           <span className="topnav-stat">·</span>
           <button className="btn sm ghost theme-toggle" onClick={toggleTheme}
                   title={theme === 'dark' ? 'switch to light' : 'switch to dark'}>
-            {theme === 'dark' ? (
-              <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.6"/>
-                <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-                  <line x1="12" y1="2.5" x2="12" y2="5"/>
-                  <line x1="12" y1="19" x2="12" y2="21.5"/>
-                  <line x1="2.5" y1="12" x2="5" y2="12"/>
-                  <line x1="19" y1="12" x2="21.5" y2="12"/>
-                  <line x1="5.3" y1="5.3" x2="7" y2="7"/>
-                  <line x1="17" y1="17" x2="18.7" y2="18.7"/>
-                  <line x1="5.3" y1="18.7" x2="7" y2="17"/>
-                  <line x1="17" y1="7" x2="18.7" y2="5.3"/>
-                </g>
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-                <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"
-                      fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
-              </svg>
-            )}
+            <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={13} />
             <span>{theme === 'dark' ? 'light' : 'dark'}</span>
           </button>
         </div>

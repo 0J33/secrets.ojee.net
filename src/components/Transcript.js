@@ -4,6 +4,7 @@
 // formal state it produced. The current tick is highlighted.
 
 import React from 'react';
+import Icon from './Icon';
 
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
 
@@ -32,7 +33,7 @@ export default function Transcript({ model, time, onSeek }) {
               {r.action !== 'stay_silent' && r.target !== 'none' && (
                 <span className="ts-target">→ {cap(r.target)}</span>
               )}
-              {r.failed && <span className="ts-action silent" title="model call failed; no-op used">⚠</span>}
+              {r.failed && <span className="ts-action silent" title="model call failed; no-op used"><Icon name="warn" size={12} /></span>}
             </div>
             {r.utterance && <div className="ts-utter">"{r.utterance}"</div>}
             <div className="ts-facts">

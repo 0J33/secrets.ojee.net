@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import Icon from '../components/Icon';
 import Graph from '../components/Graph';
 import Timeline from '../components/Timeline';
 import ModelEditor from '../components/ModelEditor';
@@ -251,13 +252,13 @@ export default function Simulator({ model, setModel }) {
                             c.parts
                               ? c.parts.map((p, j) => (
                                   <div key={`${i}-${j}`} className="clause">
-                                    <span className={'mark ' + (p.value ? 'ok' : 'no')}>{p.value ? '✓' : '✗'}</span>
+                                    <span className={'mark ' + (p.value ? 'ok' : 'no')}><Icon name={p.value ? 'check' : 'cross'} size={12} /></span>
                                     <span>{p.label} (k={c.keeper})</span>
                                   </div>
                                 ))
                               : (
                                 <div key={i} className="clause">
-                                  <span className={'mark ' + (c.value ? 'ok' : 'no')}>{c.value ? '✓' : '✗'}</span>
+                                  <span className={'mark ' + (c.value ? 'ok' : 'no')}><Icon name={c.value ? 'check' : 'cross'} size={12} /></span>
                                   <span>{c.label}</span>
                                 </div>
                               )
@@ -291,9 +292,9 @@ export default function Simulator({ model, setModel }) {
                       <td>{axiom.id}</td>
                       <td><Tex src={axiom.latex} /></td>
                       <td className="right">
-                        {result.status === 'pass' && <span className="pip pass">✓</span>}
+                        {result.status === 'pass' && <span className="pip pass"><Icon name="check" size={12} /></span>}
                         {result.status === 'fail' && (
-                          <span className="pip fail" title={JSON.stringify(result.counterexamples)}>✗ × {result.counterexamples.length}</span>
+                          <span className="pip fail" title={JSON.stringify(result.counterexamples)}><Icon name="cross" size={12} /> × {result.counterexamples.length}</span>
                         )}
                         {result.status === 'disabled' && <span className="pip disabled">off</span>}
                       </td>
@@ -321,9 +322,9 @@ export default function Simulator({ model, setModel }) {
                       <td>{theorem.id}</td>
                       <td><Tex src={theorem.latex} /></td>
                       <td className="right">
-                        {result.status === 'pass' && <span className="pip pass">✓</span>}
-                        {result.status === 'fail' && <span className="pip fail">✗</span>}
-                        {result.proofBroken && <span className="pip warn" title="Proof depends on B1 (K), which is disabled">⚠ proof</span>}
+                        {result.status === 'pass' && <span className="pip pass"><Icon name="check" size={12} /></span>}
+                        {result.status === 'fail' && <span className="pip fail"><Icon name="cross" size={12} /></span>}
+                        {result.proofBroken && <span className="pip warn" title="Proof depends on B1 (K), which is disabled"><Icon name="warn" size={12} /> proof</span>}
                       </td>
                     </tr>
                   ))}
