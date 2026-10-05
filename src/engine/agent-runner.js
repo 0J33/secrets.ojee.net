@@ -172,9 +172,10 @@ export async function runSimulation(spec, opts = {}, callbacks = {}) {
       const present = presentOf[agent.name];
       if (d.utterance) utterancesThisTick.push({ from: agent.name, to: present, utterance: d.utterance });
 
+      const rawTarget = (d.target || '').trim().toLowerCase();
       m.transcript.push({
         t, agent: agent.name, action: d.action,
-        target: (d.target || 'none').toLowerCase(),
+        target: ['n/a', 'na', 'null', 'nil', ''].includes(rawTarget) ? 'none' : rawTarget,
         utterance: d.utterance || '', reasoning: d.reasoning || '',
         believesSecret: !!d.believesSecret, intendsToKeep: !!d.intendsToKeep,
         failed: !!d._failed,
@@ -209,11 +210,23 @@ export async function runSimulation(spec, opts = {}, callbacks = {}) {
     // outsiders count as knowing φ this tick. B(a,φ) tracks belief in the
     // secret *content* — i.e. knowledge of φ — not the model's mood; the
     // agent's self-reported nervousness lives in the transcript instead.
-    // Intention is per-tick (a keeper who reveals stops intending to keep).
+    // Intention is per-tick (a keeper who reveals stops intending to keep),
+    // and is gated on knowledge: you cannot intend to keep what you do not
+    // know, which is what keeps axiom IB5 (I → ¬B¬) from failing on every
+    // run an outsider answers honestly.
     for (const agent of spec.agents) {
       const name = agent.name;
-      m.assignments.B[H][t][name][phi] = knows.has(name);
-      m.assignments.I[H][t][name][phi] = !!decisions[name].intendsToKeep;
+      const knowsPhi = knows.has(name);
+      m.assignments.B[H][t][name][phi] = knowsPhi;
+      m.assignments.I[H][t][name][phi] = knowsPhi && !!decisions[name].intendsToKeep;
+    }
+
+    // The transcript reports the facts that landed in the tables, not the
+    // raw self-report, so the chips and the model can never disagree.
+    for (const row of m.transcript) {
+      if (row.t !== t) continue;
+      row.believesSecret = m.assignments.B[H][t][row.agent][phi];
+      row.intendsToKeep = m.assignments.I[H][t][row.agent][phi];
     }
 
     // Everyone in a room hears what was said there this tick (fed next tick).

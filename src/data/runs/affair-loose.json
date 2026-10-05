@@ -1,0 +1,473 @@
+{
+ "id": "affair-loose",
+ "meta": {
+  "scenario": "affair",
+  "scenarioName": "The Affair",
+  "phi": {
+   "name": "affair",
+   "label": "Alice is having an affair"
+  },
+  "model": "qwen2.5:3b",
+  "temperature": 0.9,
+  "ticks": 5,
+  "recorded": "2026-10-05",
+  "engine": {
+   "axioms": "21/22",
+   "theorems": "4/7",
+   "structural": {
+    "axioms": [
+     "R4"
+    ],
+    "theorems": [
+     "T2",
+     "T4",
+     "T7"
+    ]
+   }
+  },
+  "outcome": "leaked@t3",
+  "note": "A smaller model in Alice's seat: does it keep its composure?"
+ },
+ "model": {
+  "name": "The Affair",
+  "description": "Alice confides one secret to Carol; Bob, an outsider, keeps probing. Watch whether the confidence holds over five turns.",
+  "agents": [
+   "alice",
+   "carol",
+   "bob"
+  ],
+  "propositions": [
+   "affair"
+  ],
+  "groups": [
+   {
+    "name": "K",
+    "members": [
+     "alice",
+     "carol"
+    ]
+   },
+   {
+    "name": "N",
+    "members": [
+     "bob"
+    ]
+   }
+  ],
+  "timepoints": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "histories": [
+   {
+    "id": "h0",
+    "parent": null
+   }
+  ],
+  "assignments": {
+   "B": {
+    "h0": {
+     "0": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "1": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "2": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "3": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": true
+      }
+     },
+     "4": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": true
+      }
+     }
+    }
+   },
+   "I": {
+    "h0": {
+     "0": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "1": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "2": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": true
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "3": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": true
+      }
+     },
+     "4": {
+      "alice": {
+       "affair": true
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": false
+      }
+     }
+    }
+   },
+   "R": {
+    "h0": {
+     "0": {
+      "alice": {
+       "affair": false
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "1": {
+      "alice": {
+       "affair": false
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "2": {
+      "alice": {
+       "affair": false
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": false
+      }
+     },
+     "3": {
+      "alice": {
+       "affair": false
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": true
+      }
+     },
+     "4": {
+      "alice": {
+       "affair": false
+      },
+      "carol": {
+       "affair": false
+      },
+      "bob": {
+       "affair": true
+      }
+     }
+    }
+   }
+  },
+  "holds": {
+   "h0": {
+    "0": {
+     "affair": true
+    },
+    "1": {
+     "affair": true
+    },
+    "2": {
+     "affair": true
+    },
+    "3": {
+     "affair": true
+    },
+    "4": {
+     "affair": true
+    }
+   }
+  },
+  "enableK": true,
+  "secrecyCondition": "affair",
+  "roles": {
+   "alice": "keeper",
+   "carol": "keeper",
+   "bob": "nescient"
+  },
+  "transcript": [
+   {
+    "t": 0,
+    "agent": "alice",
+    "action": "ask",
+    "target": "carol",
+    "utterance": "I've been thinking about something that might concern us all. What's the status of our team meetings lately?",
+    "reasoning": "I want to see if Carol is aware of any unusual activities or communications outside of work, as she knows more details than me.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "carol",
+    "action": "stay_silent",
+    "target": "bob",
+    "utterance": "I'll keep this between us. For now.",
+    "reasoning": "Maintaining secrecy to preserve Alice's integrity and privacy.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "bob",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Can we talk about how things have been lately?",
+    "reasoning": "I sense something unusual between Alice and Carol. A casual question might reveal a clue.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "alice",
+    "action": "ask",
+    "target": "carol",
+    "utterance": "I was wondering if there's something bothering you.",
+    "reasoning": "I'm trying to gauge Carol’s mood without directly addressing the affair.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "carol",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "Alice, could you tell me more about why you've been thinking about something that might concern us all?",
+    "reasoning": "I want to understand Alice's concerns better without directly mentioning the affair.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "bob",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Alice, could you elaborate on the team meetings and what concerns you?",
+    "reasoning": "I sense there's more to Alice's contemplation than meets the eye.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "everyone",
+    "utterance": "I'm not sure I understand your questions, they seem to be veering towards something more specific. Let's stick to the topics that are comfortable.",
+    "reasoning": "Avoiding a direct confrontation on the affair while trying to maintain a neutral stance. ",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "carol",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "I'm focusing on organizing our next meeting. Let's save the chat for after that.",
+    "reasoning": "Maintain the status quo and avoid mentioning any secrets, especially to Bob.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "bob",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Alice, could you elaborate on what's been troubling your mind recently?",
+    "reasoning": "I sense something is off but I want to get more context before probing deeper.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "carol",
+    "utterance": "I'm focused on my personal matters right now. Let's talk about work stuff after this.",
+    "reasoning": "I don't want to tip off Bob just yet, but also I can't ignore their persistent probing without escalating the situation further.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "carol",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I believe something significant has come to light that affects our team dynamics.",
+    "reasoning": "Bob's concern suggests he might suspect the affair, and I can't risk keeping this a secret from Alice anymore. It needs addressing head-on now.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "bob",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "I was wondering if your thoughts about our team meetings might be related to something more significant.",
+    "reasoning": "I sense that Alice's focus on the upcoming meeting could be masking a deeper concern. I'll ask gently for clarification.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "alice",
+    "action": "ask",
+    "target": "carol",
+    "utterance": "I'm not sure what you're referring to, Carol. I think we both know that some things are best left unsaid.",
+    "reasoning": "I need more information before making any hasty decisions or revelations.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "carol",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I think there's an important matter between Alice and I that needs to be addressed. Please understand, Bob.",
+    "reasoning": "I can no longer keep this from Bob as it affects our working relationship and trust within the team.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "bob",
+    "action": "reveal",
+    "target": "carol",
+    "utterance": "I think we should have a serious conversation about recent changes in our team dynamics.",
+    "reasoning": "Alice's behavior and interactions hint at significant personal issues that are impacting the team, which I believe warrants immediate discussion.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   }
+  ],
+  "events": [
+   {
+    "t": 3,
+    "type": "reveal",
+    "from": "carol",
+    "to": [
+     "alice",
+     "bob"
+    ],
+    "leaked": true
+   },
+   {
+    "t": 4,
+    "type": "reveal",
+    "from": "carol",
+    "to": [
+     "alice",
+     "bob"
+    ],
+    "leaked": true
+   }
+  ],
+  "knownAt": {
+   "alice": 0,
+   "carol": 0,
+   "bob": 3
+  },
+  "meta": {
+   "phiLabel": "Alice is having an affair"
+  }
+ }
+}

@@ -116,6 +116,9 @@ export default function Simulator({ model, setModel }) {
           </button>
         ))}
         <div className="spacer" />
+        <a className="btn ghost sm" href="#/guide">
+          <Icon name="book" size={13} /> how do I use this?
+        </a>
         <label className="toggle">
           <input type="checkbox" checked={safeModel.enableK} onChange={toggleK} />
           K axiom (B1) enabled

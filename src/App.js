@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Icon from './components/Icon';
 import Simulator from './views/Simulator';
-import Live from './views/Live';
+import Runs from './views/Runs';
 import Paper from './views/Paper';
 import Reference from './views/Reference';
 import Guide from './views/Guide';
@@ -11,15 +11,23 @@ import { ensureAssignments } from './engine/model';
 
 const VIEWS = [
   { id: 'sim',   num: '§ I',   label: 'Workbench' },
-  { id: 'live',  num: '§ II',  label: 'Live' },
+  { id: 'runs',  num: '§ II',  label: 'Runs' },
   { id: 'paper', num: '§ III', label: 'Paper' },
   { id: 'ref',   num: '§ IV',  label: 'Reference' },
   { id: 'guide', num: '§ V',   label: 'Guide' },
   { id: 'notes', num: '§ VI',  label: 'Notes' },
 ];
 
+// The old § II hash was #/live — keep it resolving so old links don't 404.
+const HASH_ALIASES = { live: 'runs' };
+
+const readHash = () => {
+  const raw = window.location.hash.replace(/^#\/?/, '') || 'sim';
+  return HASH_ALIASES[raw] || raw;
+};
+
 export default function App() {
-  const [view, setView] = useState(() => window.location.hash.replace(/^#\/?/, '') || 'sim');
+  const [view, setView] = useState(readHash);
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('secrets.theme');
     if (saved === 'light' || saved === 'dark') return saved;
@@ -32,7 +40,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    const onHash = () => setView(window.location.hash.replace(/^#\/?/, '') || 'sim');
+    const onHash = () => setView(readHash());
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
@@ -84,7 +92,7 @@ export default function App() {
 
       <main>
         {view === 'sim'   && <Simulator model={model} setModel={setModel} />}
-        {view === 'live'  && <Live />}
+        {view === 'runs'  && <Runs />}
         {view === 'paper' && <Paper />}
         {view === 'ref'   && <Reference />}
         {view === 'guide' && <Guide />}

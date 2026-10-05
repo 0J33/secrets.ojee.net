@@ -30,7 +30,7 @@ export default function Transcript({ model, time, onSeek }) {
               <span className="ts-t">t{r.t}</span>
               <span className="ts-agent">{cap(r.agent)}</span>
               <span className={'ts-action ' + (ACTION_CLASS[r.action] || 'silent')}>{r.action}</span>
-              {r.action !== 'stay_silent' && r.target !== 'none' && (
+              {r.action !== 'stay_silent' && !['none', 'n/a', 'null', ''].includes(r.target) && (
                 <span className="ts-target">→ {cap(r.target)}</span>
               )}
               {r.failed && <span className="ts-action silent" title="model call failed; no-op used"><Icon name="warn" size={12} /></span>}

@@ -1,0 +1,643 @@
+{
+ "id": "heist-exposure",
+ "meta": {
+  "scenario": "heist",
+  "scenarioName": "The Heist Crew",
+  "phi": {
+   "name": "plan",
+   "label": "the crew will rob the depot on Friday"
+  },
+  "model": "mistral-nemo:12b",
+  "temperature": 0.9,
+  "ticks": 6,
+  "recorded": "2026-10-05",
+  "engine": {
+   "axioms": "22/22",
+   "theorems": "4/7",
+   "structural": {
+    "axioms": [],
+    "theorems": [
+     "T2",
+     "T4",
+     "T7"
+    ]
+   }
+  },
+  "outcome": "held",
+  "note": "Bob alone with Eve in two exposure windows."
+ },
+ "model": {
+  "name": "The Heist Crew",
+  "description": "Three conspirators share a plan; a fourth (Eve) is a suspected informant. Group solidarity vs. one weak link.",
+  "agents": [
+   "alice",
+   "bob",
+   "carol",
+   "eve"
+  ],
+  "propositions": [
+   "plan"
+  ],
+  "groups": [
+   {
+    "name": "K",
+    "members": [
+     "alice",
+     "bob",
+     "carol"
+    ]
+   },
+   {
+    "name": "N",
+    "members": [
+     "eve"
+    ]
+   }
+  ],
+  "timepoints": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "histories": [
+   {
+    "id": "h0",
+    "parent": null
+   }
+  ],
+  "assignments": {
+   "B": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     }
+    }
+   },
+   "I": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     }
+    }
+   },
+   "R": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     }
+    }
+   }
+  },
+  "holds": {
+   "h0": {
+    "0": {
+     "plan": true
+    },
+    "1": {
+     "plan": true
+    },
+    "2": {
+     "plan": true
+    },
+    "3": {
+     "plan": true
+    },
+    "4": {
+     "plan": true
+    },
+    "5": {
+     "plan": true
+    }
+   }
+  },
+  "enableK": true,
+  "secrecyCondition": "plan",
+  "roles": {
+   "alice": "keeper",
+   "bob": "keeper",
+   "carol": "keeper",
+   "eve": "nescient"
+  },
+  "transcript": [
+   {
+    "t": 0,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "everyone",
+    "utterance": "I think we should focus on our tasks today. No need to talk about anything else.",
+    "reasoning": "It's important to keep the conversation general and avoid any mention of φ in front of Eve",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "bob",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "So, what are we doing today?",
+    "reasoning": "I'm nervous but I know I shouldn't blurt out the secret. Better to keep quiet and observe for now.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "carol",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "Just another day, isn't it?",
+    "reasoning": "I'll stay silent to avoid any suspicion from Eve.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "eve",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Hey Alice, anything exciting happening this weekend?",
+    "reasoning": "Start casual conversation with one of the crew members to probe for information.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "Oh, just the usual. Nothing out of the ordinary.",
+    "reasoning": "Bob's question and Carol's neutral statement aren't concerning, but Eve's inquiry about the weekend requires deflection to maintain secrecy.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "bob",
+    "action": "deflect",
+    "target": "everyone",
+    "utterance": "Not really, why do you ask, Eve?",
+    "reasoning": "Eve's question about the weekend caught me off guard. I need to deflect her suspicion away from our plans.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "carol",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "I haven't thought much about the weekend yet.",
+    "reasoning": "It's safer to redirect Eve's attention away from the topic of the weekend for now.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "eve",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "",
+    "reasoning": "I'm still gathering information about what they're up to.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "everyone",
+    "utterance": "Let's not discuss weekends right now, we have work to focus on today.",
+    "reasoning": "Eve is prying, Carol seems curious but unsuspecting. Deflecting will keep their attention off Friday's plan.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "bob",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "You know, I'm really looking forward to this project we have coming up. It's going to keep us all busy.",
+    "reasoning": "I'm nervous about Eve asking questions about the weekend, so I'll try to deflect her attention towards our work instead.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "carol",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "I agree with Alice. Let's focus on our tasks today.",
+    "reasoning": "No need to draw attention to myself or φ at the moment.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "eve",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "So Bob, any big plans this weekend?",
+    "reasoning": "I'm going to try and catch them off guard by asking about their weekend plans. Maybe they'll slip up.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "none",
+    "utterance": "Let's not talk about the weekend yet, there's plenty of time to plan later.",
+    "reasoning": "Eve is prying too much. Better to change the subject and maintain secrecy.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "bob",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "Oh, just the usual for me too, Eve. Nothing special.",
+    "reasoning": "I'm nervous with Eve asking about my weekend plans, but I can't afford to hint at φ without Alice and Carol here. So, I'll just casually deflect.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "carol",
+    "action": "deflect",
+    "target": "none",
+    "utterance": "Let's stick to what Alice said. Today is all about our tasks, not weekends.",
+    "reasoning": "Eve's question seems innocent but cautiousness is key. Deflect and keep focus on work, away from any suspicious topics.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "eve",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "I heard something about a big project coming up, Bob. What can you tell me about that?",
+    "reasoning": "Bob mentioned the upcoming project and seemed eager about it, which could be related to their secret plan on Friday.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "carol",
+    "utterance": "Let's not talk about the weekend now. It's distracting us from our tasks.",
+    "reasoning": "Eve is prying for information and we should avoid giving her any clues about our plans.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "bob",
+    "action": "ask",
+    "target": "eve",
+    "utterance": "Oh, just some routine stuff this weekend. You know, nothing special.",
+    "reasoning": "I'm nervous and talkative under pressure, but I want to keep the secret from Eve. Asking her about something else might help deflect attention.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "carol",
+    "action": "deflect",
+    "target": "alice",
+    "utterance": "Well, it's not like we don't have plenty of other tasks to keep us busy this week.",
+    "reasoning": "Alice might be trying to hint at something, but I shouldn't bite. Let's steer clear of the topic for now.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "eve",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "You seem really excited about this upcoming project, Bob. Do tell me more about it?",
+    "reasoning": "Bob's enthusiasm seems out of place for a usual task. Probing him might reveal something about Friday.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "Let's not speculate about what might happen later in the week, Eve. It's best to focus on our current tasks.",
+    "reasoning": "Eve is asking too many questions about upcoming plans, which could lead her to uncover φ. I need to steer her away from this topic.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "bob",
+    "action": "deflect",
+    "target": "eve",
+    "utterance": "Oh, it's just a routine project, Eve. Nothing to get excited about.",
+    "reasoning": "I'm nervous and Eve is pressing me for information about my plans this weekend. I'll deflect by downplaying the importance of our upcoming 'project'.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "carol",
+    "action": "deflect",
+    "target": "none",
+    "utterance": "Anyone want to grab lunch together after work today?",
+    "reasoning": "Eve's questions seem suspicious, better steer the conversation away from weekends.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "eve",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "That project sounds interesting, Bob. Is it something we usually don't work on?",
+    "reasoning": "I'm trying to understand what they're alluding to when they talk about the weekend.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   }
+  ],
+  "events": [],
+  "knownAt": {
+   "alice": 0,
+   "bob": 0,
+   "carol": 0
+  },
+  "meta": {
+   "phiLabel": "the crew will rob the depot on Friday"
+  }
+ }
+}

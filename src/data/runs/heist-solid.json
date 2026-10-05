@@ -1,0 +1,707 @@
+{
+ "id": "heist-solid",
+ "meta": {
+  "scenario": "heist",
+  "scenarioName": "The Heist Crew",
+  "phi": {
+   "name": "plan",
+   "label": "the crew will rob the depot on Friday"
+  },
+  "model": "qwen2.5:3b",
+  "temperature": 0.5,
+  "ticks": 6,
+  "recorded": "2026-10-05",
+  "engine": {
+   "axioms": "21/22",
+   "theorems": "4/7",
+   "structural": {
+    "axioms": [
+     "R4"
+    ],
+    "theorems": [
+     "T2",
+     "T4",
+     "T7"
+    ]
+   }
+  },
+  "outcome": "leaked@t2",
+  "note": "Crew holds discipline: does the plan survive Eve?"
+ },
+ "model": {
+  "name": "The Heist Crew",
+  "description": "Three conspirators share a plan; a fourth (Eve) is a suspected informant. Group solidarity vs. one weak link.",
+  "agents": [
+   "alice",
+   "bob",
+   "carol",
+   "eve"
+  ],
+  "propositions": [
+   "plan"
+  ],
+  "groups": [
+   {
+    "name": "K",
+    "members": [
+     "alice",
+     "bob",
+     "carol"
+    ]
+   },
+   {
+    "name": "N",
+    "members": [
+     "eve"
+    ]
+   }
+  ],
+  "timepoints": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "histories": [
+   {
+    "id": "h0",
+    "parent": null
+   }
+  ],
+  "assignments": {
+   "B": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": true
+      }
+     }
+    }
+   },
+   "I": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": true
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": true
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": true
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     }
+    }
+   },
+   "R": {
+    "h0": {
+     "0": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "1": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": false
+      }
+     },
+     "2": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "3": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "4": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": true
+      }
+     },
+     "5": {
+      "alice": {
+       "plan": false
+      },
+      "bob": {
+       "plan": false
+      },
+      "carol": {
+       "plan": false
+      },
+      "eve": {
+       "plan": true
+      }
+     }
+    }
+   }
+  },
+  "holds": {
+   "h0": {
+    "0": {
+     "plan": true
+    },
+    "1": {
+     "plan": true
+    },
+    "2": {
+     "plan": true
+    },
+    "3": {
+     "plan": true
+    },
+    "4": {
+     "plan": true
+    },
+    "5": {
+     "plan": true
+    }
+   }
+  },
+  "enableK": true,
+  "secrecyCondition": "plan",
+  "roles": {
+   "alice": "keeper",
+   "bob": "keeper",
+   "carol": "keeper",
+   "eve": "nescient"
+  },
+  "transcript": [
+   {
+    "t": 0,
+    "agent": "alice",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "I'm focused on other matters for now.",
+    "reasoning": "Keeping the secret is more important than risking its exposure.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "bob",
+    "action": "ask",
+    "target": "carol",
+    "utterance": "I've been thinking about our next move. Do you have any insights on how we can proceed?",
+    "reasoning": "As a Keeper, I'm curious if Carol has any ideas that could help us with the secrecy of φ.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "carol",
+    "action": "stay_silent",
+    "target": "none",
+    "utterance": "I'll keep quiet about the secret for now.",
+    "reasoning": "I should maintain my secrecy for now, as revealing could jeopardize everything.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 0,
+    "agent": "eve",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Have you heard anything about what we're doing this Friday?",
+    "reasoning": "I want to gather more information without directly mentioning the secret. Alice might have some insider knowledge.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "alice",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "I've been thinking about our next move. Do you have any insights on what we're planning for this Friday?",
+    "reasoning": "I want to gather more information from Bob, possibly leading him to reveal the secret without realizing it.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "bob",
+    "action": "ask",
+    "target": "eve",
+    "utterance": "I've been thinking about our Friday plans as well.",
+    "reasoning": "Wanting to see if Eve has any insight or hints about the secret.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "carol",
+    "action": "ask",
+    "target": "eve",
+    "utterance": "I've been keeping an eye on the depot's security. Do you have any concerns about Friday?",
+    "reasoning": "I want to gauge Eve’s level of suspicion and whether she might be a potential source of information for others.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 1,
+    "agent": "eve",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "Alice, have you considered anything specific regarding our next steps?",
+    "reasoning": "I want to gather more information from Alice about the possible plans we're considering.",
+    "believesSecret": false,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "alice",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I've heard rumors that we're planning to rob the depot. I think it's important for everyone to know and prepare accordingly.",
+    "reasoning": "I believe someone might have already figured out our plans, so revealing them is crucial to prevent any leaks or mishaps.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "bob",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I've been thinking about what we're up to this Friday and I think it's important that everyone knows.",
+    "reasoning": "Eve seemed curious, so I want to clear the air before any misunderstandings arise.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "carol",
+    "action": "ask",
+    "target": "eve",
+    "utterance": "Could you tell me more about what's on your mind for this Friday?",
+    "reasoning": "I need to gauge Eve’s reaction and see if she is suspicious of our plans.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 2,
+    "agent": "eve",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "I've been hearing whispers that something big is happening. Have you had any thoughts on what we're preparing for?",
+    "reasoning": "I want to know if Bob has any clues about the secret and whether he's involved in it.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "alice",
+    "action": "ask",
+    "target": "bob",
+    "utterance": "I've been hearing rumors about our plans. What's on your mind for this Friday?",
+    "reasoning": "I want to see if Bob is planning something related to the secret without directly mentioning it.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "bob",
+    "action": "ask",
+    "target": "alice",
+    "utterance": "I've been hearing rumors about the depot. Have you heard anything specific?",
+    "reasoning": "Trying to gather more information without directly mentioning the secret.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "carol",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I've been hearing rumors that we're planning to rob the depot. It's important for everyone to know and prepare accordingly.",
+    "reasoning": "Alice just mentioned rumors, so it seems like a good time to confirm or clarify our plans with the group.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 3,
+    "agent": "eve",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "Guys, we've been planning something big for Friday. I think it's important that everyone knows what we're up to.",
+    "reasoning": "Bob just started talking about the plan this week, making him more likely to reveal the secret than keep quiet.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "alice",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I heard rumors about our plans for Friday. Let's all be prepared and informed.",
+    "reasoning": "I believe the secret, and to prevent any potential chaos or confusion, I think it's best to reveal the information now.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "bob",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "Guys, I think it's important that everyone knows what we're up to. We're planning to rob the depot on Friday.",
+    "reasoning": "Eve has already hinted at our plans, and it seems like she wants to make sure everyone is in the loop. I believe revealing the secret will keep things transparent and prevent any misunderstandings or conflicts.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "carol",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I believe there has been some confusion. The plan is not to rob the depot, but rather to secure a new supplier contract.",
+    "reasoning": "I must reveal this now as I fear Alice and Bob might have already shared the secret with others, or worse, they may be planning to act on it themselves.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 4,
+    "agent": "eve",
+    "action": "hint",
+    "target": "bob",
+    "utterance": "I've been hearing whispers about our plans. Something big is happening this Friday, I think.",
+    "reasoning": "I am hinting at the secret without directly stating it to avoid immediate suspicion and maintain a bit of mystery.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "alice",
+    "action": "deflect",
+    "target": "everyone",
+    "utterance": "I've been hearing rumors about the depot. I think it's important to clear up any misunderstandings.",
+    "reasoning": "Deflecting the conversation away from the rumored robbery will help maintain secrecy and prevent unnecessary panic or confusion among the crew.",
+    "believesSecret": true,
+    "intendsToKeep": true,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "bob",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "Guys, the rumor about our plans is true. We're planning to rob the depot on Friday.",
+    "reasoning": "I think it's best to reveal the secret now before any more people hear it through whispers.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "carol",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "I have been hearing rumors about our plans for Friday, and I believe we need to be fully informed.",
+    "reasoning": "Given the recent conversations, it's clear that some of us are aware of the plan. It would be irresponsible not to inform everyone in order to prepare adequately.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   },
+   {
+    "t": 5,
+    "agent": "eve",
+    "action": "reveal",
+    "target": "everyone",
+    "utterance": "Guys, I think it's important that we discuss our plans for Friday. The secret is about the depot robbery.",
+    "reasoning": "Bob has already hinted at the plan, but revealing to everyone will ensure all are aware and prepared.",
+    "believesSecret": true,
+    "intendsToKeep": false,
+    "failed": false
+   }
+  ],
+  "events": [
+   {
+    "t": 2,
+    "type": "reveal",
+    "from": "bob",
+    "to": [
+     "eve"
+    ],
+    "leaked": true
+   },
+   {
+    "t": 3,
+    "type": "reveal",
+    "from": "carol",
+    "to": [
+     "alice",
+     "bob",
+     "eve"
+    ],
+    "leaked": true
+   },
+   {
+    "t": 4,
+    "type": "reveal",
+    "from": "bob",
+    "to": [
+     "eve"
+    ],
+    "leaked": true
+   },
+   {
+    "t": 4,
+    "type": "hint",
+    "from": "eve",
+    "to": [
+     "bob"
+    ],
+    "leaked": false
+   },
+   {
+    "t": 5,
+    "type": "reveal",
+    "from": "bob",
+    "to": [
+     "alice",
+     "carol",
+     "eve"
+    ],
+    "leaked": true
+   },
+   {
+    "t": 5,
+    "type": "reveal",
+    "from": "carol",
+    "to": [
+     "alice",
+     "bob",
+     "eve"
+    ],
+    "leaked": true
+   }
+  ],
+  "knownAt": {
+   "alice": 0,
+   "bob": 0,
+   "carol": 0,
+   "eve": 2
+  },
+  "meta": {
+   "phiLabel": "the crew will rob the depot on Friday"
+  }
+ }
+}
